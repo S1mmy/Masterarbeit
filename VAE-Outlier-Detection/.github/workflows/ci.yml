@@ -1,0 +1,83 @@
+name: CI
+
+on:
+  # Trigger the workflow on push or pull request,
+  # but only for the master branch
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [ '3.6', '3.7', '3.8', '3.9' ]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          sudo apt-get install build-essential
+          pip install --upgrade pip
+          pip install -r requirements/dev.txt
+          pip install -e .[prophet]
+          pip install -e .[torch]
+          pip freeze
+      - name: Lint with flake8
+        run: |
+          flake8 alibi_detect
+      - name: Typecheck with mypy
+        run: |
+          mypy alibi_detect
+      - name: Test with pytest
+        run: |
+          pytest
+      - name: Build Python package
+        run: |
+          make build_pypi
+
+  docs:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Install dependencies
+        run: |
+          sudo apt-get install pandoc
+          pip install -r requirements/docs.txt
+          pip freeze
+      - name: Build documentation
+        run: |
+
+  licenses:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - name: Check 3rd party licenses haven't changed
+        run: |
+          pip install "tox>=3.21.0,<4.0.0"
+          make licenses
+          make check_licenses

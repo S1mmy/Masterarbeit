@@ -1,0 +1,1 @@
+tensorboard --logdir logs/GLOW20210623-135634/train

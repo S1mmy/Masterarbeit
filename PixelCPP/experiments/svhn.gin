@@ -1,0 +1,9 @@
+import dataset.svhn
+train.dataset_fn = @dataset.svhn.dataset
+train.batch_size = 32
+train.learning_rate = 0.0002
+train.max_epoch = 500
+PixelCNNPP.residual_blocks = 3
+PixelCNNPP.residual_layers_per_block = 4
+PixelCNNPP.filters = 80
+PixelCNNPP.num_mixtures = 10
