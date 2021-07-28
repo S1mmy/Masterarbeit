@@ -1,3 +1,11 @@
+# Abhängigkeiten
+Folgende Abhängigkeiten sollten installiert werden:
+* tensorflow2
+* numpy
+* matplotlib
+* tensorflow-datasets
+* extra-keras-datasets
+
 # GanLib
 Um verschiedene Arten von GANs zu trainieren, folgenden Befehl nutzen:
 
