@@ -1,3 +1,6 @@
+'''
+War ein Test zum Training eines CVAES auf MNIST. (Hier auch vae2.py nutzen)
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import matplotlib.pyplot as plt

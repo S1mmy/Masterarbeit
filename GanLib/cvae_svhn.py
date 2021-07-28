@@ -1,3 +1,7 @@
+'''
+War ein Test für ein CVAE. Lieber cvae_svhn2.py nutzen!
+Trainiert ein CVAE auf SVHN und speichert samples in results/
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 

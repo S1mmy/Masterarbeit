@@ -1,3 +1,7 @@
+'''
+Ein CVAE wird auf SVHN trainiert und samplet Bilder nach results/
+Der Checkpoint wird nach save/ gespeichert.
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 

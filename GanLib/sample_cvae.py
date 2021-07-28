@@ -1,3 +1,6 @@
+'''
+Lädt den Checkpoint vom CVAE und samplet weitere Bilder.
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 

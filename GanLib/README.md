@@ -17,7 +17,6 @@ Werte für **model** könnten sein:
 Werte für **dataset** könnten sein:
 ```--model = (mnist, svhn)```
 
-
 # Convolutional VAE
 Um ein *CVAE* auf SVHN zu trainieren, folgenden Befehl nutzen:
 
@@ -27,6 +26,7 @@ Um ein *CVAE* auf SVHN zu trainieren, folgenden Befehl nutzen:
 # Speicherung
 Ergebnisse werden im Ordner *results/* gespeichert.
 Die .h5 Files werden im Ordner *save/* gespeichert.
+Diese werden automatisch erstellt.
 
 # Info über Files
 * **classifier.py** (Ist ein Classifier für den SVHN Datensatz.)

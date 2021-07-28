@@ -1,3 +1,6 @@
+'''
+Trainiert ein GLOW Netzwerk auf verschiedene Datensets und speichert dieses.
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 from common_definitions import *

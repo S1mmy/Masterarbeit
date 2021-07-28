@@ -1,3 +1,7 @@
+# Source: https://www.kaggle.com/dimitriosroussis/svhn-classification-with-cnn-keras-96-acc
+'''
+Trainiert und evaluiert Klassifizierer für den SVHN Datensatz.
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import numpy as np

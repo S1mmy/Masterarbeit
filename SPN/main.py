@@ -1,4 +1,7 @@
 # Source: https://github.com/pronobis/libspn-keras/blob/master/examples/notebooks/Sampling%20with%20conv%20SPNs.ipynb
+'''
+Generiert mit Hilfe eines SPNs neue MNIST Ziffern und speichert sie in einer .png
+'''
 import libspn_keras as spnk
 from tensorflow import keras
 

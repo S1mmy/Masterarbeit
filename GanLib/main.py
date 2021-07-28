@@ -1,3 +1,9 @@
+'''
+Trainiert verschiedene GANs.
+Samplet alle 25 oder 50 Epochs ein Bild und speichert dieses in results/
+Einzelne Modelle werden aus dem Ordner models geladen.
+MNIST oder SVHN Datenset wird automatisch über Tensorflow geladen.
+'''
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 import tensorflow_datasets as tfds

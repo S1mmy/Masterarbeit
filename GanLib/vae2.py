@@ -1,3 +1,6 @@
+'''
+Trainiert ein CVAE auf MNIST und samplet dieses nach vae/
+'''
 from __future__ import absolute_import, division, print_function, unicode_literals
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
