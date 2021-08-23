@@ -1,3 +1,4 @@
+# Basiert auf https://github.com/kn1cht/tensorflow_v2_cvae_sample/blob/master/sample-cvae-mnist.ipynb
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 

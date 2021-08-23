@@ -1,3 +1,4 @@
+# Basiert auf https://github.com/kn1cht/tensorflow_v2_cvae_sample/blob/master/sample-cvae-mnist.ipynb
 '''
 War ein Test für ein CVAE. Lieber cvae_svhn2.py nutzen!
 Trainiert ein CVAE auf SVHN und speichert samples in results/

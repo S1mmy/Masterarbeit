@@ -1,3 +1,4 @@
+# Basiert auf https://github.com/kn1cht/tensorflow_v2_cvae_sample/blob/master/sample-cvae-mnist.ipynb
 '''
 Ein CVAE wird auf SVHN trainiert und samplet Bilder nach results/
 Der Checkpoint wird nach save/ gespeichert.

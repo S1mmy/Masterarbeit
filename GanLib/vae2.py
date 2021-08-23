@@ -1,3 +1,4 @@
+# Basierend auf https://gist.github.com/RomanSteinberg/c4a47470ab1c06b0c45fa92d07afe2e3
 '''
 Trainiert ein CVAE auf MNIST und samplet dieses nach vae/
 '''
@@ -126,9 +127,6 @@ for epoch in range(1):
   # Iterate over the batches of the dataset.
   for step, x_batch_train in enumerate(train_dataset):
     with tf.GradientTape() as tape:
-      # !!! uncomment the following two lines to use workaround and skip !!!
-      # if step == 0 and epoch == 0:
-      #   vae._set_inputs(x_batch_train)
       reconstructed = vae(x_batch_train)
       # Compute reconstruction loss
       loss = mse_loss_fn(x_batch_train, reconstructed)

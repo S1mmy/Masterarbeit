@@ -1,3 +1,4 @@
+# Basiert auf https://github.com/kn1cht/tensorflow_v2_cvae_sample/blob/master/sample-cvae-mnist.ipynb
 '''
 War ein Test zum Training eines CVAES auf MNIST. (Hier auch vae2.py nutzen)
 '''
