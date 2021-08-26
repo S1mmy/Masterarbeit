@@ -1,7 +1,4 @@
-# Source: https://github.com/pronobis/libspn-keras/blob/master/examples/notebooks/Sampling%20with%20conv%20SPNs.ipynb
-'''
-Generiert mit Hilfe eines SPNs neue MNIST Ziffern und speichert sie in einer .png
-'''
+# Basierend auf: https://github.com/pronobis/libspn-keras/blob/master/examples/notebooks/Sampling%20with%20conv%20SPNs.ipynb
 import libspn_keras as spnk
 from tensorflow import keras
 
@@ -14,6 +11,7 @@ import tensorflow_datasets as tfds
 from libspn_keras.layers import NormalizeAxes
 import tensorflow as tf
 
+
 def take_first(a, b):
   return tf.reshape(tf.cast(a, tf.float32), (-1, 28, 28, 1))
 
@@ -23,6 +21,7 @@ normalize = spnk.layers.NormalizeStandardScore(
 )
 
 mnist_images = tfds.load(name="mnist", batch_size=32, split="train", as_supervised=True).map(take_first)
+
 normalize.adapt(mnist_images) 
 mnist_normalized = mnist_images.map(normalize)
 location_initializer = spnk.initializers.PoonDomingosMeanOfQuantileSplit(
@@ -84,7 +83,7 @@ def build_spn(sum_op, return_logits, infer_no_evidence=False):
     spnk.layers.DenseSum(num_sums=10),
     spnk.layers.RootSum(return_weighted_child_logits=return_logits)
   ], infer_no_evidence=infer_no_evidence, unsupervised=False)
-  
+
 sum_product_network = build_spn(spnk.SumOpEMBackprop(), return_logits=True)
 sum_product_network.summary()
 
@@ -108,7 +107,6 @@ metrics = []
 loss = spnk.losses.NegativeLogJoint()
 
 sum_product_network.compile(loss=loss, metrics=metrics, optimizer=optimizer)
-
 
 import tensorflow as tf 
 
@@ -135,5 +133,4 @@ sample = sum_product_network_sample.zero_evidence_inference(100)
 print("Sampling done... Now ploting results")
 for ax, im in zip(grid, sample):
     ax.imshow(np.squeeze(im), cmap="gray")
-plt.savefig("SPN_Sample.png")
 plt.show()
