@@ -32,5 +32,5 @@ Diese werden automatisch erstellt.
 # Info über Files
 * **classifier.py** (Ist ein Classifier für den SVHN Datensatz.)
 * **cvae_svhn.py** (War ein Test auf den Latent Space zuzugreifen, vom CVAE.)
-* **sample_cvae.py** (Generiert weitere Samples und Latent Space)
+* **sample_cvae.py** (Generiert weitere Samples und Latent Space Analyse)
 * **vae.py** und **vae2.py** (Sind jeweils für den MNIST Datensatz. Hier auch vae2.py zum trainieren nehmen!)

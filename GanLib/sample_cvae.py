@@ -1,3 +1,4 @@
+# Basiert auf https://github.com/kn1cht/tensorflow_v2_cvae_sample/blob/master/sample-cvae-mnist.ipynb
 '''
 Lädt den Checkpoint vom CVAE und samplet weitere Bilder.
 '''
@@ -82,6 +83,8 @@ def plot_latent_images(model, n, digit_size=32):
   plt.show()
   
 plot_latent_images(model,20)
+
+# Latent Space Analyse
 '''
 def show_pics(x,pics):
 	fig = plt.figure(figsize=(8, 4))
